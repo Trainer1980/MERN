@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Ninja{
+            constructor(name, health){
+                this.name = name;
+                this.health = health;
+                this.speed = 3;
+                this.strength = 3;
+            }
+            sayName(){
+                console.log(`My ninja name is ${this.name}`)
+            }
+            showStats(){
+                console.log(`Name: ${this.name}, Strength: ${this.strength}, Speed: ${this.speed}, Health: ${this.health}`)
+            }
+            drinkSake(){
+                this.health += 10;
+                console.log(`Health increased by 10. Health: ${this.health}`)
+            }
+        }
+
+        const orangeNinja = new Ninja ("Damian", 100)
+        orangeNinja.sayName();
+        orangeNinja.showStats();
+        orangeNinja.drinkSake();
+    </script>
+</body>
+</html>

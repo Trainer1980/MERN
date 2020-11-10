@@ -1,0 +1,9 @@
+.navi{
+    width: 15%;
+    height: 450px;
+    background-color: #6fa8dc;
+    margin: 40px 12px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Ninja{
+            constructor(name, health){
+                this.name = name;
+                this.health = health;
+                this.speed = 3;
+                this.strength = 3;
+            }
+            sayName(){
+                console.log(`My ninja name is ${this.name}`)
+            }
+            showStats(){
+                console.log(`Name: ${this.name}, Strength: ${this.strength}, Speed: ${this.speed}, Health: ${this.health}`)
+            }
+            drinkSake(){
+                this.health += 10;
+                console.log(`Health increased by 10. Health: ${this.health}`)
+            }
+        }
+        class Sensei extends Ninja{
+            constructor(name){
+                super(name);
+                this.health = 200;
+                this.speed = 10;
+                this.strength = 10;
+                this.wisdom = 10;
+            }
+            speakWisdom(){
+                super.drinkSake();
+                console.log(`We do not train to be merciful here. Mercy is for the weak. Here, in the streets, in competition: A man confronts you, he is the enemy. An enemy deserves no mercy.`)
+            }
+            speakSenseiName(){
+                console.log(`My name is ${this.name}`)
+            }
+        }
+        const orangeNinja = new Ninja ("Damian", 100)
+        orangeNinja.sayName();
+        orangeNinja.showStats();
+        orangeNinja.drinkSake();
+        const superSensei = new Sensei("Master Splinter");
+        superSensei.speakSenseiName();
+        superSensei.speakWisdom();
+        superSensei.showStats();
+    </script>
+</body>
+</html>
