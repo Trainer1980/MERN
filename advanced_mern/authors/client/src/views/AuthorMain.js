@@ -6,10 +6,11 @@ import AuthorList from '../components/AuthorList';
 const AuthorMain = () => {
     const [ authors, setAuthors ] = useState([])
     const [ loaded, setLoaded ] = useState(false)
+
     useEffect(() => {
         axios.get('http://localhost:8000/api/authors')
             .then(res =>{
-                setAuthors(res.data);
+                setAuthors(res.data.sort((a, b) => a.name > b.name ? 1 : -1));
                 setLoaded(true);
             })
             .catch(err => console.log("Error: ", err))
